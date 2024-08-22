@@ -1,0 +1,61 @@
+import java.util.Scanner;
+
+public class ReverseStringsInArray {
+
+    // Method to reverse each string in the array
+    public static String reverseString(String str) {
+        String reversed = "";
+        int ptr = str.length() - 1;
+        while (ptr >= 0) {
+            reversed = reversed + str.charAt(ptr);
+            ptr--;
+        }
+        return reversed;
+    }
+
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.println("Enter the number of strings:");
+        int n = s.nextInt();
+        s.nextLine();
+
+        String[] strings = new String[n];
+
+        System.out.println("Enter the Strings:");
+        for (int i = 0; i < n; i++) {
+            strings[i] = s.nextLine();
+        }
+
+        System.out.println("\nEntered Strings Array:");
+        System.out.print("[");
+        for(int i = 0;i < n;i++){
+            if(i == strings.length - 1) {
+                System.out.print(strings[i]);
+            }
+            else{
+            System.out.print(strings[i] + " , ");
+            }
+        }
+        System.out.print("]");
+
+        for (int i = 0; i < n; i++) {
+            strings[i] = reverseString(strings[i]);
+        }
+
+
+        System.out.println("\nReversed Strings Array:");
+        System.out.print("[");
+        for (int i = 0; i < strings.length; i++) {
+            String str = strings[i];
+            if(i == strings.length - 1) {
+                System.out.print(str);
+            }
+            else {
+                System.out.print(str + " , ");
+            }
+        }
+        System.out.print("]");
+
+    }
+}
