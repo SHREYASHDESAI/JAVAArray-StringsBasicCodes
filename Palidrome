@@ -1,0 +1,24 @@
+import java.util.Scanner;
+//this is using reversing, see other video for palindrome for other method
+public class Palindrome {
+    public static void main(String[] args){
+        Scanner s = new Scanner(System.in);
+        System.out.println("Enter a String:");
+        String a = s.nextLine();
+        String b = "";
+        int ptr = a.length() - 1;
+        while (ptr >= 0) {
+            b = b + a.charAt(ptr);
+            ptr--;
+        }
+
+        if(a.equals(b))
+        {
+           System.out.println("Palindrome");
+        }
+        else
+        {
+            System.out.println("Not a Palindrome");
+        }
+    }
+}
