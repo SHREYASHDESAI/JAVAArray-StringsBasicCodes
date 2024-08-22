@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class ArraySum {
+    public static void main(String[] args) {
+        Scanner s = new Scanner(System.in);
+
+        System.out.println("Enter no. of Elements in the Arrays:");
+        int n = s.nextInt();
+        int[] a = new int[n];
+
+        System.out.println("Enter Elements of Array:");
+        for (int i = 0; i < a.length; i++) {
+            a[i] = s.nextInt();
+        }
+
+        /*enhanced for loop*/
+        System.out.print("[ ");
+        for (int j : a) {
+            System.out.print(j + " ");
+        }
+        System.out.print("]");
+
+        sumarray(a);
+    }
+
+    public static void sumarray(int[] a) {
+        int sum = 0;
+        for (int i = 0; i < a.length; i++) {
+            sum += a[i];
+        }
+        System.out.printf("\nSum of Elements of Array: %d", sum);
+    }
+}
