@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class ArrayMaxEfficient {
+    public static void max(int[] a){
+        int max = Integer.MIN_VALUE;
+        for(int i =0;i<a.length;i++){
+            if(max<a[i]){
+                max = a[i];
+            }
+        }
+        System.out.println("\nMaximun = " + max);
+    }
+    public static void main(String[] args){
+        Scanner s = new Scanner(System.in);
+
+        System.out.println("Enter no. of Elements in the Arrays:");
+        int n = s.nextInt();
+        int[] a = new int[n];
+
+        System.out.println("Enter Elements of Array:");
+        for (int i = 0; i < a.length; i++) {
+            a[i] = s.nextInt();
+        }
+
+        /*enhanced for loop*/
+        System.out.print("[ ");
+        for (int j : a) {
+            System.out.print(j + " ");
+        }
+        System.out.print("]");
+
+        max(a);
+
+    }
+}
