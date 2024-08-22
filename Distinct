@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class Distinct {
+    public static int dist(int []a,int n){
+        int i,j,count = 0;
+        boolean isdistinct = true;
+
+        for(i=0;i<n;i++)
+        {
+            for(j=i-1;j>=0;j--)
+            {
+                if(a[i]==a[j])
+                {
+                    isdistinct = false;
+                    break;
+                }
+            }
+            if(isdistinct == true)
+            {
+                count++;
+            }
+            isdistinct = true;
+        }
+        return count;
+    }
+    public static void main(String[] args){
+        Scanner s = new Scanner(System.in);
+
+        System.out.println("Enter no. of Elements in the Arrays:");
+        int n = s.nextInt();
+        int []a = new int[n];
+
+        int i;
+
+        System.out.println("Enter Elements of Array:");
+        for(i=0;i<a.length;i++)
+        {
+            a[i] = s.nextInt();
+        }
+
+        System.out.print("[ ");
+        for(i=0;i<a.length;i++)
+        {
+            System.out.print(a[i] + " ");
+        }
+        System.out.print("]");
+
+        System.out.println("\nDistinct Elements = " + dist(a,n));
+
+    }
+}
